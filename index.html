@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body onload="init()">
+
+    <div class="level">
+        <button onclick="setLevel(4)">Easy</button>
+        <button onclick="setLevel(8)">Medium</button>
+        <button onclick="setLevel(12)">Hard</button>
+    </div>
+
+    <div  class="lives">
+        <h2>Lives</h2>
+        <p><span id="lives">3</span></p>
+    </div>
+
+    <div class="btn">
+        <h2>Safe</h2>
+        <button onclick="safeClick()"><span id="btn">3</span></button>
+    </div>
+
+    </div>
+    <div class="wrapper">
+        <h2>Stopwatch</h2>
+        <p><span id="seconds">00</span>:<span id="tens">00</span></p>
+        </div> 
+        
+    <div class="board"></div>
+    <div class="game-over">GAME OVER!
+        <botton onclick="init()">RESTART</botton>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
