@@ -6,36 +6,34 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
-<body onload="init()">
+   <body onload="init()">
 
-    <div class="level">
-        <button onclick="setLevel(4)">Easy</button>
-        <button onclick="setLevel(8)">Medium</button>
-        <button onclick="setLevel(12)">Hard</button>
+    <div class="header">
+    <h1>MINESWEEPER!</h1>
     </div>
-
-    <div  class="lives">
-        <h2>Lives</h2>
-        <p><span id="lives">3</span></p>
-    </div>
-
-    <div class="btn">
-        <h2>Safe</h2>
-        <button onclick="safeClick()"><span id="btn">3</span></button>
-    </div>
-
-    </div>
-    <div class="wrapper">
-        <h2>Stopwatch</h2>
+        <div onmouseover="" style="cursor: pointer;" class="level1" onclick="setLevel(4)">Easy</div>
+        <div onmouseover="" style="cursor: pointer;"class="level2" onclick="setLevel(8)">Medium</div>
+        <div onmouseover="" style="cursor: pointer;"class="level3" onclick="setLevel(12)">Hard</div>
+  
+        <div class="wrapper">
         <p><span id="seconds">00</span>:<span id="tens">00</span></p>
         </div> 
-        
-    <div class="board"></div>
-    <div class="game-over">GAME OVER!
-        <botton onclick="init()">RESTART</botton>
-    </div>
+    
+        <div class="lives">
+        <p>Lives <span id="lives">3</span></p>
+        </div>
+    
+        <div onmouseover="" style="cursor: pointer;" onclick="safeClick()" class="safe-div">
+        <p>Safe <span id="btn"> 3</span></p>
+        </div>
 
-    <script src="js/utils.js"></script>
-    <script src="js/main.js"></script>
+        <div class="board"></div>
+
+        <div onclick="init()" class="game-over">GAME OVER! <br> Click to restart </div>
+        <div onclick="init()" class="win">YOU WIN! <br> Click to restart</div>
+       
+
+      <script src="js/utils.js"></script>
+      <script src="js/main.js"></script>
 </body>
 </html>

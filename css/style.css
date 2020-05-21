@@ -1,68 +1,150 @@
 body{
-   background-color: lightblue;
+    margin-left:auto;
+    margin-right:auto;
+    width:960px;
+    background-color: lightyellow
 }
-.lives{
+
+.header{
+    margin-left: 325px;
+    width: 300px;
+    background-color: black; 
+ }
+ 
+  h1{
+      color: white;
+     margin-top: 70px;
+     text-align: center;
+     font-family: Arial, Helvetica, sans-serif;
+ }
+.level1{
+    font-family: Arial, Helvetica, sans-serif; 
+    margin-top: 10px;
+    margin-left:386px;
     text-align: center;
-    padding: 10px;
-    width: 100px;
-    height: 100px;
-    border: 2px solid black;
-    border-radius: 100px;
     display: inline-block;
-    margin-left: 220px;
-      
+    border: 3px outset;
+    background-color: lightgray;
+    width: 39px;
+    padding-left: 5px ;
+    padding-right:5px;
 }
+.level2{
+    margin-left: 0px;
+    font-family: Arial, Helvetica, sans-serif; 
+    text-align: center;
+    display: inline-block;
+    border: 3px outset;
+    background-color: lightgray;
+    width: 55px;
+    padding-left: 2px ;
+    padding-right: 3px;
+}
+.level3{
+    font-family: Arial, Helvetica, sans-serif; 
+    text-align: center;
+    display: inline-block;
+    border: 3px outset;
+    background-color: lightgray;
+    width: 43px;
+    padding-left: 5px ;
+    padding-right: 5px;
+}
+
+
 .wrapper{
+    font-family: Arial, Helvetica, sans-serif;  
     text-align: center;
-    padding: 10px;
-    width: 100px;
-    height: 100px;
-    border: 2px solid black;
-    border-radius: 100px;
     display: inline-block;
-
+    margin-left:386px;
+    border: 3px outset;
+    background-color: lightgray;
+    width: 41px;
+    padding-left: 4px ;
+    padding-right: 4px;
+} 
+.lives{
+    font-family: Arial, Helvetica, sans-serif;  
+    text-align: center;
+    display: inline-block;
+    border: 3px outset;
+    background-color: lightgray;
+    width: 52px;
+    padding-left: 4px ;
+    padding-right:4px;
 }
-.btn{
+ .safe-div{
+    font-family: Arial, Helvetica, sans-serif;  
     text-align: center;
-    padding: 10px;
-    width: 100px;
-    height: 100px;
-    border: 2px solid black;
-    border-radius: 100px;
     display: inline-block;
-
+    border: 3px outset ;
+    background-color: lightgray;
+    width: 47px;
+    padding-left: 3px ;
+    padding-right:3px;
 }
 
 table{
-    border: 1px solid black;
+    border-style:outset;
     margin: 0 auto;
     text-align: center;
 }
 tr{
+    border-style: outset;
     text-align: center;
+    background-color: lightgray;
 }
 th{
     text-align: center;
+    border-style: outset;
 }
 td{
     text-align: center;
-    width: 30px;
-    height: 30px;
-    border: 1px solid black;
+    font-family: Arial, Helvetica, sans-serif;    
+    width: 35px;
+    height: 35px;
+    border-style:outset;
     background-color: lightgray;
 }
 
 .safe{
- background-color:greenyellow;
+   background-color:greenyellow;
 }
 
 .game-over{
-    height: 100px;
+    background-color: red;
+    height: 35px;
     width: 100px;
-    border: 10px solid black;;
+    border: 2px solid black;;
     text-align: center;
     margin: 0 auto;
-    margin-top: 10px;
-    padding: 20px;
+    margin-top: 5px;
+    padding: 5px;
     display:none;
+}
+
+.win{
+    background-color: lightgreen;
+    height: 35px;
+    width: 100px;
+    border: 2px solid black;;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 5px;
+    padding: 5px;
+    display:none;
+}
+
+.restart{
+    text-align: center;
+    border: 2px solid black;
+}
+
+.clicked{
+    border: 3px inset ;
+}
+
+.shown-bomb{
+    background-color: red;
+    border: 2px inset ;
 }
