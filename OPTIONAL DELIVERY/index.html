@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+   <body onload="init()">
+
+    <div class="header">
+    <h1>MINESWEEPER!</h1>
+    <p class="best-score">Best Time To Beat : <span class="best-score-span"></span> </p>
+    </div>
+        <div onmouseover="" style="cursor: pointer;" class="level1" onclick="setLevel(4)">Easy</div>
+        <div onmouseover="" style="cursor: pointer;"class="level2" onclick="setLevel(8)">Medium</div>
+        <div onmouseover="" style="cursor: pointer;"class="level3" onclick="setLevel(12)">Hard</div>
+  
+        <div class="wrapper">
+        <p><span id="seconds">00</span>:<span id="tens">00</span></p>
+        </div> 
+    
+        <div class="lives">
+        <p>Lives <span id="lives">3</span></p>
+        </div>
+    
+        <div onmouseover="" style="cursor: pointer;" onclick="safeClick()" class="safe-div">
+        <p>Safe <span id="btn"> 3</span></p>
+        </div>
+
+        <div class="board"></div>
+
+        <div onclick="init()" class="game-over">GAME OVER! <br> Click to restart </div>
+        <div onclick="init()" class="win">YOU WIN! <br> Click to restart</div>
+        <div onclick="init()" class="best-score-div">NEW BEST SCORE!<br><img class="mariachi" src="pic/Screen Shot 2020-05-22 at 3.07.42 PM.png" alt=""><br> Click to restart</div>
+       
+
+      <script src="js/utils.js"></script>
+      <script src="js/main.js"></script>
+</body>
+</html>
