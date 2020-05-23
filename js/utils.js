@@ -28,9 +28,9 @@ function cellClicked(id, event) {
     if (clicker === 1) {
         if (gBoard[idNums[0]][idNums[1]].isMine === true) {
             gBoard[idNums[0]][idNums[1]].isShown = true;
-           if (gLives !== 0 ) {
-               gLives--
-           }
+            if (gLives !== 0) {
+                gLives--
+            }
             elLives.innerText = gLives;
             checkIfGameOver()
             renderBoard(gBoard);
@@ -109,11 +109,17 @@ var appendSeconds = document.getElementById("seconds")
 var Interval;
 function start() {
     Interval = setInterval(startTimer, 10);
+    gGameStartTime = Date.now();
 }
 function stop() {
+    gGameEndTime = Date.now();
+    getGameTime();
     clearInterval(Interval);
+    seconds = 00;
+    tens = 00;
 }
 function startTimer() {
+
     tens++;
     if (tens < 9) {
         appendTens.innerHTML = "0" + tens;
@@ -208,6 +214,9 @@ function checkIfWon() {
         gSmiley = '&#128526'
         renderBoard(gBoard)
         gIsGameOn = false;
+        if (gIsNewBestShown === true) {
+            return
+        }
         var elWin = document.querySelector('.win')
         elWin.style.display = 'block';
     }
@@ -255,3 +264,33 @@ function removeHint(HintNums) {
     }
     renderBoard(gBoard)
 }
+
+function checkLocalStorage() {
+    if (localStorage.getItem('Best Score') === null) {
+        localStorage.setItem('Best Score', '1000')
+        elBestTime.innerText = 'First Game'
+    }
+}
+
+function getGameTime() {
+    if( gIsGameOn === false){
+        return
+    }
+    var gameTime = (gGameEndTime - gGameStartTime) / 1000;
+    var bestScoreStr = localStorage.getItem('Best Score')
+    var bestScoreInt = parseInt(bestScoreStr)
+
+    if (gameTime < bestScoreInt) {
+        gameTime = gameTime.toFixed(2)
+        var gameTimeStr = gameTime.toString();
+        localStorage.setItem('Best Score', gameTimeStr);
+        gBestScore = gameTimeStr;
+        var bestScoreMusic = new Audio('Best Score.wav');
+        bestScoreMusic.play();
+        var bestScorePic = document.querySelector('.best-score-div');
+        bestScorePic.style.display = 'block';
+        gIsNewBestShown = true;
+    }
+}
+
+

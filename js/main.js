@@ -7,8 +7,13 @@ var BOMB = '&#128163';
 var FLAG = '&#9873;'
 var BULB = '&#128161'
 var gSmiley = '&#128512'
+var gBestScore = localStorage.getItem('Best Score')
+var elBestTime = document.querySelector('.best-score-span');
 
+var gIsNewBestShown = false;
 var gIsGameOn = false;
+var gGameStartTime ;
+var gGameEndTime ;
 var gLives = 3;
 var gSafe = 3;
 var gMarked = 0;
@@ -20,10 +25,14 @@ var elSafe = document.getElementById("btn");
 
 
 function init() {
-    stop()
+    //stop()
+    gBestScore = localStorage.getItem('Best Score')
+    elBestTime.innerText = gBestScore
+    checkLocalStorage()
     gLives = 3;
     gSafe = 3;
     hints = 3;
+    gIsNewBestShown = false
     gIsGameOn = false;
     appendTens.innerText = '00'
     appendSeconds.innerText = '00'
@@ -35,6 +44,8 @@ function init() {
     elWin.style.display = 'none';
     var elGameOver = document.querySelector('.game-over');
     elGameOver.style.display = 'none'
+    var elBestScore =  document.querySelector('.best-score-div');
+    elBestScore.style.display = 'none'
     buildBoard()
     renderBoard(gBoard)
 }

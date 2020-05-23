@@ -10,6 +10,7 @@
 
     <div class="header">
     <h1>MINESWEEPER!</h1>
+    <p class="best-score">Best Time To Beat : <span class="best-score-span"></span> </p>
     </div>
         <div onmouseover="" style="cursor: pointer;" class="level1" onclick="setLevel(4)">Easy</div>
         <div onmouseover="" style="cursor: pointer;"class="level2" onclick="setLevel(8)">Medium</div>
@@ -31,6 +32,7 @@
 
         <div onclick="init()" class="game-over">GAME OVER! <br> Click to restart </div>
         <div onclick="init()" class="win">YOU WIN! <br> Click to restart</div>
+        <div onclick="init()" class="best-score-div">NEW BEST SCORE!<br><img class="mariachi" src="pic/Screen Shot 2020-05-22 at 3.07.42 PM.png" alt=""><br> Click to restart</div>
        
 
       <script src="js/utils.js"></script>
